@@ -103,6 +103,37 @@ const useStyles = () => {
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 30,
+      },
+      error_message: {
+        color: '#ff0000',
+        fontSize: 12,
+        marginTop: 5,
+      },
+      header: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 30,
+        textAlign: 'center',
+        width: 350,
+      },
+      facebook_login_signUp: {
+        marginTop: 0, 
+        backgroundColor: theme.colors.primary, 
+        borderRadius: 3,
+        width: 350, 
+        padding: 8,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center', 
+      },
+      footer_text: {
+        color: '#8e8e8e' ,
+        fontSize: 12,
+        maxWidth: 250, 
+        textAlign: 'center',
       }
     });
 };

@@ -13,6 +13,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUp from './screens/SignUp';
 
+
+
 const App : React.FC = (): JSX.Element => {
   return (
     <Provider store={store}>      
@@ -35,7 +37,7 @@ const AppWrapper: React.FC = () => {
               {/* <Stack.Screen name="SignUp" component={SignUp} /> */}
             {/* </Stack.Navigator> */}
           {/* </NavigationContainer> */}
-          <Login />
+          <SignUp />
           </Surface>
         </SafeAreaView>
       </PaperProvider>
