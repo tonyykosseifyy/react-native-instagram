@@ -45,7 +45,7 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
   };
   console.log(errors);
   return (
-    <ScrollView style={{width : screenWidth }}>
+    <ScrollView>
     <KeyboardAvoidingView behavior='height'>
       <TouchableWithoutFeedback onPress={handleClickAway}>
         <Surface style={styles.container} elevation={0}>
