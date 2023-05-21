@@ -60,7 +60,8 @@ const useStyles = () => {
         flexDirection:'row',
         alignItems: 'center',
         marginTop: 30,
-        alignSelf: 'stretch',
+        width: 350,
+        alignSelf: 'center'
       },
       divider_bar: {
         flex: 1,
@@ -94,7 +95,7 @@ const useStyles = () => {
         marginBottom: 30,
         width: screenWidth,
         height: 1,
-        maxHeight: 1
+        maxHeight: .5
       },
       footer_content: {
         display: 'flex',

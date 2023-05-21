@@ -108,8 +108,6 @@ const Login = ({ navigation } : LoginProps): JSX.Element => {
         </View>
         
       </View>
-      
-      
     </Surface>
     </KeyboardAvoidingView>
   );
