@@ -20,8 +20,9 @@ const useStyles = () => {
 					flex: 1,
 					display: 'flex',
 					flexDirection: 'column',
-					justifyContent: 'center',
 					alignItems: 'center',
+					maxWidth: 300,
+					backgroundColor: 'red',
 				},
         header_svg: {
             color: dark ? '#ffffff' : '#000000',
@@ -37,7 +38,26 @@ const useStyles = () => {
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
-				}
+					marginVertical: 20,
+				},
+				header_text: {
+					textAlign: 'center',
+					marginVertical: 10,
+				},
+				switch: {
+					display: 'flex',
+					flexDirection: 'row',
+					alignItems: 'center',
+					flex: 1,
+				},
+				switch_button: {
+					flex: 1,
+					padding: 10,
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'center',
+					alignItems: 'center',
+				},
 
     });
 };
