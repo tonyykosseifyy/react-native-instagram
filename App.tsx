@@ -12,7 +12,7 @@ import StatusBarComponent from './components/StatusBar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUp from './screens/SignUp';
-
+import LoginHelp from './screens/LoginHelp';
 
 
 const App : React.FC = (): JSX.Element => {
@@ -37,7 +37,7 @@ const AppWrapper: React.FC = () => {
               {/* <Stack.Screen name="SignUp" component={SignUp} /> */}
             {/* </Stack.Navigator> */}
           {/* </NavigationContainer> */}
-          <SignUp />
+            <LoginHelp />
           </Surface>
         </SafeAreaView>
       </PaperProvider>

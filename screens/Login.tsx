@@ -28,7 +28,6 @@ const Login = ({ navigation } : LoginProps): JSX.Element => {
   const [text, setText] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
-  const [inputFocused, setInputFocused] = useState<blurTuple>([false, false]);
   
   const theme = useTheme();
   const dispatch = useDispatch();
@@ -39,7 +38,7 @@ const Login = ({ navigation } : LoginProps): JSX.Element => {
   // console.log(theme);
 	
   return (
-    <KeyboardAvoidingView behavior='height'>
+    <KeyboardAvoidingView behavior='height' keyboardVerticalOffset={220}>
     <Surface style={styles.container} elevation={0}>
       
       <Image source={getImage(theme?.dark)} style={styles.image} />

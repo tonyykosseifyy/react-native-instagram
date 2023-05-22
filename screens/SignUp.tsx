@@ -39,14 +39,24 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
     console.log(data);
   };
 
-  
+  const inputRefs = {
+    input1: useRef(null),
+    input2: useRef(null),
+    input3: useRef(null),
+    input4: useRef(null),
+    // Add more refs for additional input fields
+  };
+  const focusNextField = (nextField: string): void => {
+    inputRefs[nextField].current.focus();
+  };
+
   const handleClickAway = () => {
     Keyboard.dismiss();
   };
   console.log(errors);
   return (
-    <ScrollView>
-    <KeyboardAvoidingView behavior='height'>
+    <ScrollView contentContainerStyle={{ flexGrow: 1, width: screenWidth  }} >
+    
       <TouchableWithoutFeedback onPress={handleClickAway}>
         <Surface style={styles.container} elevation={0}>
           
@@ -63,7 +73,9 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
             <Text style={styles.divider_text}>Or</Text> 
             <Divider style={[styles.divider_bar, styles.divider_bar_2]} horizontalInset  />
           </View>
-
+          <KeyboardAvoidingView 
+            keyboardVerticalOffset={220}
+            behavior='height'>
           <Surface elevation={0}>
             <Controller
               control={control}
@@ -76,6 +88,8 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
                   placeholder='Phone number, username or email'
                   placeholderTextColor={theme.dark ? '#b4b1b1': '#a5a5a5'}
                   keyboardType="email-address" 
+                  ref={inputRefs.input1}
+                  onSubmitEditing={() => focusNextField('input2')}
                 />
               )}
               name="email"
@@ -93,6 +107,9 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
                   value={value}
                   placeholder='Full Name'
                   placeholderTextColor={theme.dark ? '#b4b1b1': '#a5a5a5'}
+
+                  ref={inputRefs.input2}
+                  onSubmitEditing={() => focusNextField('input3')}
                 />
               )}
               name="full_name"
@@ -110,7 +127,9 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
                   value={value}
                   placeholder='Username'
                   placeholderTextColor={theme.dark ? '#b4b1b1': '#a5a5a5'}
-                />
+                  ref={inputRefs.input3}
+                  onSubmitEditing={() => focusNextField('input4')}
+                  />
               )}
               name="user_name"
               rules={{ required: { value: true, message: 'User Name is required'}}}
@@ -128,6 +147,7 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
                     placeholder='Password'
                     placeholderTextColor={theme.dark ? '#b4b1b1': '#a5a5a5'}
                     secureTextEntry={!passwordVisibility}
+                    ref={inputRefs.input4}
                   />
                 )}
                 name="password"
@@ -146,6 +166,9 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
             </TouchableOpacity>
             </View>
           </Surface>
+          </KeyboardAvoidingView>
+
+
           <View style={styles.forgot_password}>
             <TouchableOpacity  onPress={() => dispatch(toggleTheme())}><Text style={styles.forgot_password_word}>Forgotten password?</Text></TouchableOpacity>
           </View>
@@ -164,7 +187,6 @@ const SignUp = ({ navigation } : LoginProps): JSX.Element => {
 
         </Surface>
       </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
     </ScrollView>
   );
 };
